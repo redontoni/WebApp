@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+	<persistence-unit name="CompanyManagementWebApp">
+		<class>company.management.entity.Brand</class>
+		<class>company.management.entity.Company</class>
+		<class>company.management.entity.CompanyBrand</class>
+		<class>company.management.entity.CompanyDepartment</class>
+		<class>company.management.entity.Country</class>
+		<class>company.management.entity.Currency</class>
+		<class>company.management.entity.DepartmentSector</class>
+		<class>company.management.entity.Department</class>
+		<class>company.management.entity.Privilege</class>
+		<class>company.management.entity.Product</class>
+		<class>company.management.entity.Role</class>
+		<class>company.management.entity.SectorBrand</class>
+		<class>company.management.entity.SectorShop</class>
+		<class>company.management.entity.Sector</class>
+		<class>company.management.entity.ShopProduct</class>
+		<class>company.management.entity.Shop</class>
+		<class>company.management.entity.User</class>
+	</persistence-unit>
+</persistence>

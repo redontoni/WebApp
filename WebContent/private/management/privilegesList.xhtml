@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<p:outputLabel value="Privileges List" />
+</h:head>
+
+<body>
+	<ui:composition>
+		<h:form>
+			<br />
+			<p:commandButton value="Create" action="#{privilegelist_ui.create()}"
+				process="@this" />
+			<br />
+			<p:dataTable var="privilege1" value="#{privilegelist_ui.privileges}">
+				<p:column headerText="Privilege Name">
+					<h:outputText value="#{privilege1.privilege}" />
+				</p:column>
+				<p:column headerText="Tools">
+					<p:commandButton value="Update"
+						action="#{privilegelist_ui.editPrivilege()}" process="@this">
+						<f:param value="#{privilege1.privilegesID}" name="privilegeID" />
+					</p:commandButton>
+					<p:commandButton value="Delete"
+						action="#{privilegelist_ui.deletePrivilege()}" process="@this">
+						<f:param value="#{privilege1.privilegesID}" name="privilegeID"></f:param>
+					</p:commandButton>
+				</p:column>
+			</p:dataTable>
+		</h:form>
+	</ui:composition>
+</body>
+</html>

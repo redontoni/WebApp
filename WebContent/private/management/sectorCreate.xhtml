@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head></h:head>
+<body>
+	<h:form>
+		<p:outputLabel value="Sector Name : * " />
+		<p:inputText value="#{sector_ui.newSector.sectorName}"
+			required="true" />
+		<br />
+
+		<p:outputLabel value="Department : * " />
+		<p:selectOneMenu value="#{sector_ui.name}">
+			<f:selectItem itemLabel="Select the Department you want to add this Sector"
+				itemValue="Redon" />
+			<f:selectItems value="#{sector_ui.departmentName}" />
+		</p:selectOneMenu>
+
+		<br />
+
+		<p:commandButton value="Save"
+			action="#{sector_ui.addNewSector()}" />
+		<p:commandButton value="Cancel" action="#{sector_ui.cancel()}"
+			process="@this" />
+	</h:form>
+</body>
+</html>

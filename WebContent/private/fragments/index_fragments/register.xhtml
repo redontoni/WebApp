@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+    <body>
+        <ui:composition >
+            <center>
+            <h:form>
+            <table>
+                <tr>
+                    <td><h:outputText value="Firstname: "/></td>
+                    <td><h:inputText id="firstname_textbox" required="true" requiredMessage="Firstname is required" value="" 
+                                     validatorMessage="Firstname cannot be less than 30 characters long">
+                            <f:validateLength maximum="30"/> 
+                        </h:inputText></td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <h:message  for="firstname_textbox" style="color:red;"/>
+                    </td>
+                </tr>
+               <tr>
+                    <td><h:outputText value="Lastname: "/></td>
+                    <td><h:inputText id="lastname_textbox" required="true" requiredMessage="Lastname is required" value="" 
+                                     validatorMessage="Lastname cannot be less than 30 characters long">
+                            <f:validateLength maximum="30"/> 
+                        </h:inputText></td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <h:message  for="lastname_textbox" style="color:red;"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td><h:outputText value="Username:"/></td>
+                    <td><h:inputText id="username_textbox" required="true" requiredMessage="Username is required" value="" 
+                                     validatorMessage="Username cannot be less than 30 characters long">
+                            <f:validateLength maximum="30"/> 
+                        </h:inputText></td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <h:message  for="username_textbox" style="color:red;"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td><h:outputText value="Password: "/></td>
+                    <td><h:inputSecret id="password_textbox" required="true" requiredMessage="Password is required" value="" 
+                                     validatorMessage="Password cannot be less than 30 characters long">
+                            <f:validateLength maximum="30"/> 
+                        </h:inputSecret></td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <h:message  for="password_textbox" style="color: red;"/>
+                    </td>
+                </tr>
+            </table>
+                <h:commandButton value="Register" />
+                 <br/>
+                <h:outputText value="" id="bean_error" style="color: red;"/>
+            </h:form>
+            </center>
+        </ui:composition>
+    </body>
+</html>

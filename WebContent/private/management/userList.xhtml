@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<p:outputLabel value="User List" />
+</h:head>
+<body>
+<ui:composition>
+	<h:form>
+		<p:commandButton value="Create" action="#{userlist_ui.createUser()}"
+			process="@this" />
+
+		<br></br>
+		<p:dataTable var="user" value="#{userlist_ui.users}">
+			<p:column headerText="Username">
+				<h:outputText value="#{user.username}" />
+			</p:column>
+
+			<p:column headerText="Password">
+				<h:outputText value="#{user.password}" />
+			</p:column>
+
+			<p:column headerText="Tools">
+				<p:commandButton value="Update" action="#{userlist_ui.editUser()}"
+					process="@this">
+					<f:param value="#{user.userID}" name="userID" />
+				</p:commandButton>
+				<p:commandButton value="Delete" action="#{userlist_ui.deleteUser()}"
+					process="@this">
+					<f:param value="#{user.userID}" name="userID">
+					</f:param>
+				</p:commandButton>
+			</p:column>
+		</p:dataTable>
+	</h:form>
+	
+	</ui:composition>
+</body>
+</html>

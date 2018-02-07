@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Redon's E-Shop</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </h:head>
+    <body>
+        <div id="outer_shell" style="width:1000px; height:100%; margin:0 auto;">
+            <div id="header">
+                <div id="first_wrapper" style="width:1000px; height:100px;">
+                    <div style="width:300px; float:left;">
+                        <span style="width:100px;">ALL</span>
+                        <span style="width:100px;">Albania</span>
+                    </div>
+                    <div style="width:400px; float:left;">
+                        <h1>REDON'S E-STORE</h1>
+                    </div>
+                    <div style="width:300px; float:left;">
+                        <h:form>
+                            <span style="width:100px;">
+                                <p:commandLink update=":content_group" value="Register">
+                                <f:setPropertyActionListener value="/private/fragments/index_fragments/register.xhtml" target="#{homeBean.fragment}"/>
+                            </p:commandLink>
+                            </span>
+                        <span style="width:100px;">
+                            <p:commandLink update=":content_group" value="Log In">
+                                <f:setPropertyActionListener value="/private/fragments/index_fragments/login.xhtml" target="#{homeBean.fragment}"/>
+                            </p:commandLink>
+                        </span>
+                        </h:form>
+                    </div>
+                </div><!-- close first_wrapper -->
+                <div id="second_wrapper" style="width:1000px; height:20px;">
+                
+                    <center>
+                    <h:form>
+                        <span style="width:100px;">
+                        <p:commandLink style="display: inline-block;" value="Home" update=":content_group">'
+                            <f:setPropertyActionListener value="/private/fragments/index_fragments/home.xhtml" target="#{homeBean.fragment}"/>
+                        </p:commandLink>
+                        </span>
+                        <span style="width:100px;">
+                        <p:commandLink style="display: inline-block;" value="About"/>
+                        </span>
+                        <span style="width:100px;">
+                        <p:commandLink style="display: inline-block;" value="View Products by Brands"/>
+                        </span>
+                        <span style="width:100px;">
+                        <p:commandLink style="display: inline-block;" value="View Products by Department"/>
+                        </span>
+                    </h:form>
+                    </center>
+                </div>
+            </div><!-- close header -->
+            <div id="content" style="width:1000px">
+                <h:panelGroup id="content_group">
+                    <h:panelGroup rendered="#{homeBean.fragment != ''}">
+                    <ui:include src="#{homeBean.fragment}"/>
+                    </h:panelGroup>
+                </h:panelGroup>
+            </div><!-- close content -->
+            <div id="footer" style="width:1000px">
+            </div><!-- close footer -->
+        </div>
+    </body>
+</html>

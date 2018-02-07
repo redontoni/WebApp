@@ -1,0 +1,34 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head></h:head>
+<body>
+	<h:form id="mainForm">
+		<p:commandButton value="Create"
+			action="#{sector_ui.createSector()}" process="@this" />
+		<p:dataTable var="sector"
+			value="#{sector_ui.listOfSectors}">
+			<p:column headerText="Sector Name">
+				<h:outputText value="#{sector.sectorName}" />
+			</p:column>
+			<br />
+
+			<p:column headerText="Tools">
+				<p:commandButton value="Update"
+					action="#{sector_ui.editSector()}" process="@this">
+					<f:param value="#{sector.sectorId}" name="sectorID"></f:param>
+				</p:commandButton>
+				<p:commandButton value="Delete"
+					action="#{sector_ui.deleteSector()}" update="mainForm" 
+					process="@this">
+					<f:param value="#{sector.sectorId}" name="sectorID"></f:param>
+				</p:commandButton>
+			</p:column>
+		</p:dataTable>
+	</h:form>
+</body>
+</html>

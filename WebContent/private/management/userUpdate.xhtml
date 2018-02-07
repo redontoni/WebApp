@@ -1,0 +1,29 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head></h:head>
+<body>
+	<h:form>
+		<p:outputLabel value="Username : * " />
+		<p:inputText value="#{userlist_ui.editUser.username}" required="true" />
+		<br />
+		<p:outputLabel value="Password : * " />
+		<p:inputText value="#{userlist_ui.editUser.password}" required="true" />
+		<br />
+		<p:outputLabel value="Role : * " />
+		<p:selectOneMenu value="#{userlist_ui.name}">
+			<f:selectItem itemLabel="Select One Role" itemValue="Redon" />
+			<f:selectItems value="#{userlist_ui.roleNames}" />
+		</p:selectOneMenu>
+		<br />
+		<p:commandButton value="Save" action="#{userlist_ui.saveEditUser()}" />
+		<p:commandButton value="Cancel" action="#{userlist_ui.cancel()}"
+			process="@this" />
+
+	</h:form>
+</body>
+</html>

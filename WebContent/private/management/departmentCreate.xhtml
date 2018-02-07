@@ -1,0 +1,20 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head></h:head>
+<body>
+	<h:form>
+		<p:outputLabel value="Department Name : * " />
+		<p:inputText value="#{department_ui.newDepartment.departmentName}" required="true" />
+		<br />
+
+		<p:commandButton value="Save" action="#{department_ui.addNewDepartment()}" />
+		<p:commandButton value="Cancel" action="#{department_ui.cancel()}"
+			process="@this" />
+	</h:form>
+</body>
+</html>
